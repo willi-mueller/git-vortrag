@@ -10,7 +10,7 @@
 \
 
 \f1 \uc0\u10063 
-\f0 	Titel: \'84Yesterday it worked \'96 distributed version control with git 
+\f0 	Titel: \'84Yesterday it worked\'93 \'96 Distributed Version Control With Git 
 \fs26 \cf3 \expnd0\expndtw0\kerning0
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
@@ -28,9 +28,39 @@
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1160\fi-760\sb600\pardirnatural
 
 \f1 \cf2 \uc0\u10063 
-\f0 	Was ist und wozu Versionskontrolle?\
+\f0 	Was ist und wozu Versionskontrolle?
+\fs26 \cf3 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
+
+\f1 \cf3 \uc0\u10063 
+\f0 	Wer hat schonmal Versionskontrolle wof\'fcr benutzt?
+\fs30 \cf5 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
+
+\f1 \cf5 \uc0\u10063 
+\f0 	Begriffe
+\fs26 \cf3 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
+
+\f1 \cf3 \uc0\u10063 
+\f0 	Tree = Datei-Baum\
 
 \f1 \uc0\u10063 
+\f0 	Commit\
+
+\f1 \uc0\u10063 
+\f0 	Branch\
+
+\f1 \uc0\u10063 
+\f0 	Merge
+\fs34 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1160\fi-760\sb600\pardirnatural
+
+\f1 \cf2 \uc0\u10063 
 \f0 	1. Generation VK 
 \fs30 \cf5 \expnd0\expndtw0\kerning0
 \
@@ -43,13 +73,28 @@
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
 
 \f1 \cf3 \uc0\u10063 
+\f0 	Inhalt wird auf Datei-Ebene verfolgt (nicht Inhalt, sondern Dateiname!)\
+
+\f1 	\uc0\u10063 
+\f0 	bei Umbenennung/Metadaten-\'c4nderungen Probleme\
+
+\f1 \uc0\u10063 
 \f0 	Server - Client \
 
 \f1 \uc0\u10063 
-\f0 	Server ist allm\'e4chtig, single point of failure \
+\f0 	Server mach alles, keine Client-Logik\
+
+\f1 	\uc0\u10063 
+\f0 	single point of failure\
+
+\f1 	\uc0\u10063 
+\f0 	langsam (Wer hat was gemacht?, was kommt woher?)\
 
 \f1 \uc0\u10063 
-\f0 	Hierarchie \
+\f0 	Hierarchie in der Entwicklung \
+
+\f1 \uc0\u10063 
+\f0 	Probleme beim branchen und mergen\
 
 \f1 \uc0\u10063 
 \f0 	funktioniert einfach nicht!
@@ -79,7 +124,10 @@
 \f0 	Linux-Kernel-Entwicklung im Open-Source-Projekt mit vielen Entwicklern \
 
 \f1 \uc0\u10063 
-\f0 	Linus Torvalds hackte es schnell zusammen 
+\f0 	Linus Torvalds hackte es schnell zusammen \
+
+\f1 \uc0\u10063 
+\f0 	Name: \'84Ich habe meine Projekte stets nach mir benannt: Linux und git\'93 (git == Depp, Idiot)
 \fs30 \cf5 \expnd0\expndtw0\kerning0
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
@@ -95,6 +143,9 @@
 
 \f1 \uc0\u10063 
 \f0 	Revisionen: kryptographisch validiert (SHA-1), komprimiert (gzip)\
+
+\f1 	\uc0\u10063 
+\f0 	Inhalt kann nicht nachtr\'e4glich (b\'f6swillig) ver\'e4ndert werden, wenn Bit kippt (Platte, Netzwerk, \'85) merkt man es\
 
 \f1 \uc0\u10063 
 \f0 	mehrere gleichzeitige Zust\'e4nde eines Dokumentes\
@@ -136,7 +187,7 @@
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
 
-\f1 \cf5 	\uc0\u10063 
+\f1 \cf5 \uc0\u10063 
 \f0 	Pull von github/Christophs Server\
 
 \f1 \uc0\u10063 
@@ -248,4 +299,41 @@
 \f0 	denn ich wei\'df, wenn Bits gekippt/Platte unzuverl\'e4ssig war!  \
 
 \f1 \uc0\u10063 
-\f0 	git ist nicht f\'fcr tausende gro\'dfe Bin\'e4r-Dateien sonder vor allem f\'fcr Text       }
+\f0 	git ist nicht f\'fcr tausende gro\'dfe Bin\'e4r-Dateien sonder vor allem f\'fcr Text 
+\fs34 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1160\fi-760\sb600\pardirnatural
+
+\f1 \cf2 \uc0\u10063 
+\f0 	Diskussion
+\fs30 \cf5 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
+
+\f1 \cf5 \uc0\u10063 
+\f0 	git f\'fcr welchen Einsatz-Zweck?\
+
+\f1 \uc0\u10063 
+\f0 	Zukunft siehe Ausblick realistisch?\
+
+\f1 \uc0\u10063 
+\f0 	git-\'e4hnliche Ans\'e4tze  
+\fs26 \cf3 \expnd0\expndtw0\kerning0
+            
+\fs34 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1160\fi-760\sb600\pardirnatural
+
+\f1 \cf2 \uc0\u10063 
+\f0 	Quellen
+\i\fs22 \cf4 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2800\fi-560\sb120\pardirnatural
+
+\f2\i0 \cf4 \uc0\u9998 
+\f0\i 	http://de.whygitisbetterthanx.com/\
+
+\f2\i0 \uc0\u9998 
+\f0\i 	http://github.com/visionmedia/git-extras
+\i0\fs26 \cf3 \expnd0\expndtw0\kerning0
+                 }
