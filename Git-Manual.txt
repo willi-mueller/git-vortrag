@@ -1,0 +1,60 @@
+Ein Arbeitstag mit git
+
+(1a) Ein neues remote repository laden
+    $ git clone <repo_url> || <path/to/repo>
+    $ git clone http://github.com/jups23/git-vortrag
+
+(1b) Ein neues lokales repository anlegen und (alle) Dateien in git hinzufügen
+    $ git init
+    $ git add <file_name>    #Nur im aktuellen Ordner (bzw. tiefer) möglich
+    $ git add -A             #fügt alle Dateien hinzu; $ git add . auch möglich
+	
+(2) Eine Änderung an git übergeben
+    $ git commit  <file name>  #nur bestimmte Datei(en), Texteditor für message
+    $ git commit -am "Meine commit message" #-a commit mit allen Dateien
+                                            #-m "..." commit message vom Terminal
+
+(3) Einen branch anlegen
+    $ git branch <branch_name>
+
+(4) Zwei branches zusammenführen – merge
+    (4.1) $ git merge <anderer branch>    # merge in aktuellen branch
+    (4.2) $ git mergetool    # falls Konflikte, geht auch mit Binärdateien!
+   
+(5) Zu einer bestimmten Version temporär zurückkehren (commit, branch möglich!)
+    $ git checkout <SHA1-Hash des commits>    # die ersten vier Zeichen reichen
+    $ git checkout a354c
+
+(6) Den Versionsverlauf ändern
+
+
+(6) Einen commit taggen
+    $ git tag <tag name> <SHA1 commit> || -F <file name>   #taggt commit || file
+    $ git tag test    # taggt letzten commit mit "test"
+
+(7) Lokale Versionsgeschichte in ein remote repository einfügen
+    (7.1) $ git remote add <alias> <url>   #Kürzel für remote repo hinzufügen 
+          $ git remote add cloud git@github.com:jups23/git-vortrag.git
+    (7.2) $ git push <alias> <branch>
+          $ git push cloud master
+
+(8) Änderungen von einem remote repository in das lokale ziehen
+    (8.1) git branch cloud-temp        # legt temporären branch an
+    (8.2) git pull cloud cloud-temp    # merge von cloud in lokalen temp branch
+    (8.3) git checkout cloud-temp      # Test möglich, ob Änderungen okay sind
+    (8.4) git merge master cloud-temp  # Übernehmen der Änderungen
+
+(!) Sinnvolle Einstellungen
+$ open ~/.gitconfig    #dann copy & paste mit meinem Beispiel-gitconfig, zu finden in http://github.com/jups23/git-vortrag/blob/master/.gitconfig
+
+(!!) Nützlicher Helfer
+http://github.com/visionmedia/git-extras fügt praktische git Befehle hinzu 
+z.B. $ git setup, $ git changelog 
+
+(?) git Hilfe
+$ git <command> --help
+http://help.github.com/
+http://www-cs-students.stanford.edu/~blynn/gitmagic/ch02.html
+https://git.wiki.kernel.org/index.php/GitFaq
+http://www.kernel.org/pub/software/scm/git/docs/user-manual.html
+Google is your friend ;-)
