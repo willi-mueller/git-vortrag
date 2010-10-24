@@ -25,8 +25,15 @@ Ein Arbeitstag mit git
     $ git checkout <SHA1-Hash des commits>    # die ersten vier Zeichen reichen
     $ git checkout a354c
 
-(6) Den Versionsverlauf ändern
-
+(6) Die Versionsgeschichte ändern
+    (6a) $ git commit --amend    # commit message ändern, mit -m"..." im Terminal
+    (6b) $ git add <file> && $ git commit --amend    # noch Datei hinzufügen
+    (6c) $ git commit --amend -a    # noch weitere Änderungen hinzufügen
+    (6d.1) $ git rebase <SHA1 commit>~<Anzahl der zu ändernden commits>
+           $ git rebase a63f4~10    # lässt von a63f4 die letzten 10 commits ändern
+    (6d.2) Im Editor: commit messages ändern, commits zusammenfassen, commits löschen
+    (6d.3.1) Speichern, Editor schließen    #fertig!
+        (6d.3.2) $git commit --amend # nur falls ein commit ähnlich wie in 6a-6c editiert werden soll
 
 (6) Einen commit taggen
     $ git tag <tag name> <SHA1 commit> || -F <file name>   #taggt commit || file
