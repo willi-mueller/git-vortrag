@@ -17,11 +17,11 @@ Ein Arbeitstag mit git
 (3) Einen branch anlegen
     $ git branch <branch_name>
 
-(4) Zwei branches zusammenführen – merge
+(4) Zwei branches zusammenführen == merge
     (4.1) $ git merge <anderer branch>    # merge in aktuellen branch
     (4.2) $ git mergetool    # falls Konflikte, geht auch mit Binärdateien!
    
-(5) Zu einer bestimmten Version temporär zurückkehren (commit, branch möglich!)
+(5) Zu einer bestimmten Version temporär zurückkehren (commit, branch etc. möglich!)
     $ git checkout <SHA1-Hash des commits>    # die ersten vier Zeichen reichen
     $ git checkout a354c
 
@@ -46,9 +46,9 @@ Ein Arbeitstag mit git
           $ git push cloud master
 
 (8) Änderungen von einem remote repository in das lokale ziehen
-    (8.1) git branch cloud-temp        # legt temporären branch an
+    (8.1) git branch cloud-temp        # legt temporären branch an (siehe 3)
     (8.2) git pull cloud cloud-temp    # merge von cloud in lokalen temp branch
-    (8.3) git checkout cloud-temp      # Test möglich, ob Änderungen okay sind
+    (8.3) git checkout cloud-temp      # Test möglich, ob Änderungen okay sind (siehe 5)
     (8.4) git merge master cloud-temp  # Übernehmen der Änderungen
 
 (!) Sinnvolle Einstellungen
