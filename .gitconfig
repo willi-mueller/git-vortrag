@@ -1,0 +1,35 @@
+# copy und paste mich für sinnvolle globale Einstellungen in ~/.gitconfig 
+# bzw. für spezielle Einstellungen für ein bestimmtes repository in
+# path/to/repo/.git/config 
+
+[user]
+	name = Mein Name    #bitte ändern
+	email = Meine@adresse.de    #bitte ändern
+
+[color]
+    ui = auto
+  [color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+  [color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+  [color "status"]
+    added = green
+    changed = yellow
+    untracked = cyan
+
+[core]
+	editor = mate -w     # Einstellung für TextMate (nur für den Mac)
+	excludesfile = ~/.gitignore
+
+[alias]    #gegen Tippfehler im Terminal bei langen Wörtern
+	cm = commit
+	co = checkout
+	st = status
+
+[merge]
+	tool = FileMerge
