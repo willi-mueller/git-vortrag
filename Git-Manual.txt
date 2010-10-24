@@ -15,41 +15,48 @@ Ein Arbeitstag mit git
                                             #-m "..." commit message vom Terminal
 
 (3) Einen branch anlegen
-    $ git branch <branch_name>
+    $ git branch <branch_name>    #weiter siehe (4), ((5) beachten)
 
-(4) Zwei branches zusammenführen == merge
-    (4.1) $ git merge <anderer branch>    # merge in aktuellen branch
-    (4.2) $ git mergetool    # falls Konflikte, geht auch mit Binärdateien!
+(4) Zu eine bestimmte Version wechseln (commit, branch etc. möglich!) ((5) beachten)
+    (4a) $ git checkout <SHA1-Hash des commits>    # die ersten vier Zeichen reichen
+         $ git checkout a354c
+    (4b) $ git checkout <branch_name>              # in bestimmten branch wechseln
+
+(5) "Working directory dirty" oder "please commit or stash changes to ..." WTF? (siehe [1])
+    $ git stash    # legt uncommited Änderungen auf einen Zwischenspeicher (Stack)
+                   # normal weiter arbeiten, jetzt branch und checkout möglich
+    $ git stash apply stash    # Änderungen aus dem stash auf aktuellen Zustand anwenden
+    $ git stash clear    #alles stashes löschen
+
+(6) Zwei branches zusammenführen == merge
+    (6.1) $ git merge <anderer branch>    # merge in aktuellen branch
+    (6.2) $ git mergetool    # falls Konflikte, geht auch mit Binärdateien!
    
-(5) Zu einer bestimmten Version temporär zurückkehren (commit, branch etc. möglich!)
-    $ git checkout <SHA1-Hash des commits>    # die ersten vier Zeichen reichen
-    $ git checkout a354c
-
-(6) Die Versionsgeschichte ändern
-    (6a) $ git commit --amend    # commit message ändern, mit -m"..." im Terminal
-    (6b) $ git add <file> && $ git commit --amend    # noch Datei hinzufügen
-    (6c) $ git commit --amend -a    # noch weitere Änderungen hinzufügen
-    (6d.1) $ git rebase <SHA1 commit>~<Anzahl der zu ändernden commits>
+(7) Die Versionsgeschichte ändern
+    (7a) $ git commit --amend    # commit message ändern, mit -m"..." im Terminal
+    (7b) $ git add <file> && $ git commit --amend    # noch Datei/Änderung hinzufügen
+    (7c.1) $ git rebase <SHA1 commit>~<Anzahl der zu ändernden commits>
            $ git rebase a63f4~10    # lässt von a63f4 die letzten 10 commits ändern
-    (6d.2) Im Editor: commit messages ändern, commits zusammenfassen, commits löschen
-    (6d.3.1) Speichern, Editor schließen    #fertig!
-        (6d.3.2) $git commit --amend # nur falls ein commit ähnlich wie in 6a-6c editiert werden soll
+    (7c.2) Im Editor: commit messages ändern, commits zusammenfassen, commits löschen
+    (7c.3.1) Speichern, Editor schließen    #fertig!
+        (6c.3.2) $git commit --amend # nur falls ein commit ähnlich wie in 6a oder 6b editiert werden soll
 
-(6) Einen commit taggen
+(8) Einen commit taggen
     $ git tag <tag name> <SHA1 commit> || -F <file name>   #taggt commit || file
     $ git tag test    # taggt letzten commit mit "test"
 
-(7) Lokale Versionsgeschichte in ein remote repository einfügen
-    (7.1) $ git remote add <alias> <url>   #Kürzel für remote repo hinzufügen 
+(9) Lokale Versionsgeschichte in ein remote repository einfügen
+    (9.1) $ git remote add <alias> <url>   #Kürzel für remote repo hinzufügen 
           $ git remote add cloud git@github.com:jups23/git-vortrag.git
-    (7.2) $ git push <alias> <branch>
+    (9.2) $ git push <alias> <branch>
           $ git push cloud master
 
-(8) Änderungen von einem remote repository in das lokale ziehen
-    (8.1) git branch cloud-temp        # legt temporären branch an (siehe 3)
-    (8.2) git pull cloud cloud-temp    # merge von cloud in lokalen temp branch
-    (8.3) git checkout cloud-temp      # Test möglich, ob Änderungen okay sind (siehe 5)
-    (8.4) git merge master cloud-temp  # Übernehmen der Änderungen
+(10) Änderungen von einem remote repository in das lokale ziehen
+    (10.1) git branch cloud-temp        # legt temporären branch an (siehe 3)
+    (10.2) git pull cloud cloud-temp    # merge von cloud in lokalen temp branch
+    (10.3) git checkout cloud-temp      # Test möglich, ob Änderungen okay sind (siehe 5)
+    (10.4) git merge master cloud-temp  # Übernehmen der Änderungen
+
 
 (!) Sinnvolle Einstellungen
 $ open ~/.gitconfig    #dann copy & paste mit meinem Beispiel-gitconfig, zu finden in http://github.com/jups23/git-vortrag/blob/master/.gitconfig
@@ -58,10 +65,10 @@ $ open ~/.gitconfig    #dann copy & paste mit meinem Beispiel-gitconfig, zu find
 http://github.com/visionmedia/git-extras fügt praktische git Befehle hinzu 
 z.B. $ git setup, $ git changelog 
 
-(?) git Hilfe
+(?) git Hilfe, nach Qualität und Praxisrelevanz sortiert
 $ git <command> --help
 http://help.github.com/
 http://www-cs-students.stanford.edu/~blynn/gitmagic/ch02.html
 https://git.wiki.kernel.org/index.php/GitFaq
 http://www.kernel.org/pub/software/scm/git/docs/user-manual.html
-Google is your friend ;-)
+[1] http://ariejan.net/2008/04/23/git-using-the-stash/
