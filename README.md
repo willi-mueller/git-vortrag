@@ -7,10 +7,10 @@ Das ist mein Vortrag über Distributed Version Control mit Git.
 * Wenn du meine Materialien haben möchtest: `$ git clone git@github.com:jups23/git-vortrag.git`
 
 * Wenn du den Vortrag verbessern möchtest:
-	** (1) Bei github anmelden
-	** (2) Dieses repository forken
-	** (3) git push origin <your_branch>
-	** (4) Einen [Pull request](http://help.github.com/pull-requests/) an mich senden, damit ich Verbesserungen in meinen fork aufnehmen kann
+	* (1) Bei github anmelden
+	* (2) Dieses repository forken
+	* (3) git push origin <your_branch>
+	* (4) Einen [Pull request](http://help.github.com/pull-requests/) an mich senden, damit ich Verbesserungen in meinen fork aufnehmen kann
 	
 ## Übung ;-) ##
 
