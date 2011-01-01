@@ -35,27 +35,6 @@
 
 \f1 \cf3 \uc0\u10063 
 \f0 	Wer hat schonmal Versionskontrolle wof\'fcr benutzt?
-\fs30 \cf5 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
-
-\f1 \cf5 \uc0\u10063 
-\f0 	Begriffe
-\fs26 \cf3 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
-
-\f1 \cf3 \uc0\u10063 
-\f0 	Tree = Datei-Baum\
-
-\f1 \uc0\u10063 
-\f0 	Commit\
-
-\f1 \uc0\u10063 
-\f0 	Branch\
-
-\f1 \uc0\u10063 
-\f0 	Merge
 \fs34 \cf2 \expnd0\expndtw0\kerning0
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1160\fi-760\sb600\pardirnatural
@@ -139,16 +118,16 @@
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
 
 \f1 \cf3 \uc0\u10063 
-\f0 	wenn Fragen zu Details: nachher fragen!\
-
-\f1 \uc0\u10063 
 \f0 	Revisionen: kryptographisch validiert (SHA-1), komprimiert (gzip)\
 
 \f1 	\uc0\u10063 
-\f0 	Inhalt kann nicht nachtr\'e4glich (b\'f6swillig) ver\'e4ndert werden, wenn Bit kippt (Platte, Netzwerk, \'85) merkt man es\
+\f0 	Inhalt kann nicht nachtr\'e4glich (b\'f6swillig) ver\'e4ndert werden ohen dass man es merkt, wenn Bit kippt (Platte, Netzwerk, \'85) merkt man es\
 
 \f1 \uc0\u10063 
 \f0 	mehrere gleichzeitige Zust\'e4nde eines Dokumentes\
+
+\f1 \uc0\u10063 
+\f0 	History ver\'e4nderbar (commits zusammenfassen, herausnehmen, Messages \'e4ndern \'85)\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\ql\qnatural\pardirnatural
 
 \f1 \cf6 \expnd0\expndtw0\kerning0
@@ -170,66 +149,81 @@
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
 
 \f1 \cf5 \uc0\u10063 
-\f0 	git Objekte
-\fs26 \cf3 \expnd0\expndtw0\kerning0
+\f0 	git == Pool, der Inhalte verwaltet\
+
+\f1 \uc0\u10063 
+\f0 	Intern: git-Objekte\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\ql\qnatural\pardirnatural
+
+\f1 \cf7 \expnd0\expndtw0\kerning0
+	\uc0\u10063 
+\f0 	Blob
+\fs26 \cf6 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\ql\qnatural\pardirnatural
+
+\f1 \cf6 \expnd0\expndtw0\kerning0
+	\uc0\u10063 
+\f0 	enth\'e4lt Bin\'e4r-Daten (.txt, .psd \'85)\cf3 \expnd0\expndtw0\kerning0
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
 
-\f1 \cf3 \uc0\u10063 
-\f0 	jedes Objekt ist intern mit einem SHA1-Hash benannt, kann aber auch zus\'e4tzlich menschenlesbar benannt werden
-\fs30 \cf5 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
+\f1 \cf3 	\uc0\u10063 
+\f0 	Bezeichnung: SHA1-Hash\
 
-\f1 \cf5 	\uc0\u10063 
+\f1 	\uc0\u10063 
+\f0 	einfache Datei\cf6 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\ql\qnatural\pardirnatural
+
+\f1\fs30 \cf7 \expnd0\expndtw0\kerning0
+	\uc0\u10063 
+\f0 	Tree
+\fs26 \cf6 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\ql\qnatural\pardirnatural
+
+\f1 \cf6 \expnd0\expndtw0\kerning0
+	\uc0\u10063 
+\f0 	Zeiger auf Blobs und andere Trees (SHA1 als Zeiger)\cf3 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
+
+\f1 \cf3 	\uc0\u10063 
+\f0 	analog: Ordner, Unterordner
+\fs30 \cf7 \expnd0\expndtw0\kerning0
+\
+\pard\tx560\tx1120\tx1680\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\sb160\ql\qnatural\pardirnatural
+
+\f1 \cf5 \expnd0\expndtw0\kerning0
+\uc0\u10063 
 \f0 	Commit
 \fs26 \cf3 \expnd0\expndtw0\kerning0
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
 
 \f1 \cf3 	\uc0\u10063 
-\f0 	zeigt den Zustand eines Trees zu einem bestimmten Zeitpunkt, enth\'e4lt:\
+\f0 	zaigt auf einen bestimmten Tree => zeigt Porjekt-Zustand zu einem bestimmten Zeitpunkt, enth\'e4lt:\
 
-\f1 	\uc0\u10063 
+\f1 		\uc0\u10063 
 \f0 	Tree (SHA1 als Zeiger)\
 
-\f1 	\uc0\u10063 
+\f1 		\uc0\u10063 
 \f0 	Parent (SHA1 als Zeiger)\
 
-\f1 	\uc0\u10063 
+\f1 		\uc0\u10063 
 \f0 	Autor\
 
-\f1 	\uc0\u10063 
-\f0 	Committer
+\f1 		\uc0\u10063 
+\f0 	Committer\
+
+\f1 		\uc0\u10063 
+\f0 	Comment (Commit Message)
 \fs30 \cf5 \expnd0\expndtw0\kerning0
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
 
-\f1 \cf5 	\uc0\u10063 
-\f0 	Tree
-\fs26 \cf3 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
-
-\f1 \cf3 	\uc0\u10063 
-\f0 	Zeiger auf Blobs und Trees (SHA1 als Zeiger)
-\fs30 \cf5 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
-
-\f1 \cf5 	\uc0\u10063 
-\f0 	Blob
-\fs26 \cf3 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
-
-\f1 \cf3 	\uc0\u10063 
-\f0 	enth\'e4lt Bin\'e4r-Daten (.txt, .psd \'85)
-\fs30 \cf5 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
-
-\f1 \cf5 	\uc0\u10063 
+\f1 \cf5 	 \uc0\u10063 
 \f0 	Tag
 \fs26 \cf3 \expnd0\expndtw0\kerning0
 \
@@ -246,69 +240,6 @@
 \cf5 \
 
 \f1 \uc0\u10063 
-\f0 	Beispiele: Demo\
-
-\f1 	\uc0\u10063 
-\f0 	Vorbereitung
-\fs26 \cf3 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
-
-\f1 \cf3 	\uc0\u10063 
-\f0 	Projekt mit mehreren Revisionen und Branches angelegt/Streamie nehmen\
-
-\f1 	\uc0\u10063 
-\f0 	Projekt bei github angelegt haben
-\fs30 \cf5 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
-
-\f1 \cf5 \uc0\u10063 
-\f0 	Pull von github/Christophs Server\
-
-\f1 \uc0\u10063 
-\f0 	\'c4nderungen machen
-\fs26 \cf3 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
-
-\f1 \cf3 \uc0\u10063 
-\f0 	$ git diff\
-
-\f1 \uc0\u10063 
-\f0 	$ git commit -am\'94Added \'85 functionality\'94\
-
-\f1 \uc0\u10063 
-\f0 	$ git checkout branch experimental\
-
-\f1 	\uc0\u10063 
-\f0 	=> Text im Editor \'e4ndert sich sofort!1!!
-\fs30 \cf5 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
-
-\f1 \cf5 \uc0\u10063 
-\f0 	OH, yesterday it worked\'85
-\fs26 \cf3 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
-
-\f1 \cf3 \uc0\u10063 
-\f0 	IN History zur\'fcckgehen und testen bis fail gefunden \
-
-\f1 \uc0\u10063 
-\f0 	$ git checkout 34fed3a\
-
-\f1 \uc0\u10063 
-\f0 	fixen (syntax-Fehler)\
-
-\f1 \uc0\u10063 
-\f0 	$ git push 
-\f1\fs30 \cf7 \expnd0\expndtw0\kerning0
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li1680\fi-520\sb280\pardirnatural
-\cf5 \expnd0\expndtw0\kerning0
-\uc0\u10063 
 \f0 	Einsatzm\'f6glichkeiten 
 \fs26 \cf3 \expnd0\expndtw0\kerning0
 \
@@ -336,7 +267,7 @@
 \f0 	Mercurial (hg)  \
 
 \f1 	\uc0\u10063 
-\f0 	besserer Windows- und company support \
+\f0 	(angeblich) besserer Windows- und company support \
 
 \f1 \uc0\u10063 
 \f0 	wesentlich langsamer, denn fast nur in Python vs. C (git)
@@ -372,7 +303,7 @@
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li2240\fi-560\sb160\pardirnatural
 
 \f1 \cf3 \uc0\u10063 
-\f0 	denn ich wei\'df, wenn Bits gekippt/Platte unzuverl\'e4ssig war!  \
+\f0 	denn man wei\'df, wenn Bits gekippt/Platte unzuverl\'e4ssig war!  \
 
 \f1 \uc0\u10063 
 \f0 	git ist nicht f\'fcr tausende gro\'dfe Bin\'e4r-Dateien sonder vor allem f\'fcr Text 
@@ -410,6 +341,40 @@
 \f0\i 	http://de.whygitisbetterthanx.com/\
 
 \f2\i0 \uc0\u9998 
-\f0\i 	http://github.com/visionmedia/git-extras
+\f0\i 	http://github.com/visionmedia/git-extras\
+
+\f2\i0 \uc0\u9998 
+\f0\i 	https://git.wiki.kernel.org/index.php/GitFaq\
+
+\f2\i0 \uc0\u9998 
+\f0\i 	http://www-cs-students.stanford.edu/~blynn/gitmagic/ch02.html
 \i0\fs26 \cf3 \expnd0\expndtw0\kerning0
-                                     }
+    
+\i\fs22 \cf4 \expnd0\expndtw0\kerning0
+\
+
+\f2\i0 \uc0\u9998 
+\f0\i 	http://en.wikipedia.org/wiki/SHA-1\
+
+\f2\i0 \uc0\u9998 
+\f0\i 	http://github.com/languages
+\i0\fs26 \cf3 \expnd0\expndtw0\kerning0
+     
+\i\fs22 \cf4 \expnd0\expndtw0\kerning0
+\
+
+\f2\i0 \uc0\u9998 
+\f0\i 	http://book.git-scm.com\
+
+\f2\i0 \uc0\u9998 
+\f0\i 	http://chaosradio.ccc.de/cre130.html \
+
+\f2\i0 \uc0\u9998 
+\f0\i 	http://en.wikipedia.org/wiki/Git_(software)\
+
+\f2\i0 \uc0\u9998 
+\f0\i 	http://geekandpoke.typepad.com/.a/6a00d8341d3df553ef0133f4ea9817970b-pi 
+\i0\fs26 \cf3 \expnd0\expndtw0\kerning0
+\
+\
+                                            }

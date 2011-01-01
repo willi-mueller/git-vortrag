@@ -42,8 +42,8 @@ Ein Arbeitstag mit git
         (6c.3.2) $git commit --amend # nur falls ein commit ähnlich wie in 6a oder 6b editiert werden soll
 
 (8) Einen commit taggen
-    $ git tag <tag name> <SHA1 commit> || -F <file name>   #taggt commit || file
-    $ git tag test    # taggt letzten commit mit "test"
+    $ git tag -a <tag name> <SHA1 commit> || -F <file name>   #taggt commit || file
+    $ git tag -a test    # taggt letzten commit mit "test"
 
 (9) Lokale Versionsgeschichte in ein remote repository einfügen
     (9.1) $ git remote add <alias> <url>   #Kürzel für remote repo hinzufügen 

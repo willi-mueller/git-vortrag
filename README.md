@@ -15,3 +15,4 @@ Das ist mein Vortrag über Distributed Version Control mit Git.
 ## Übung ;-) ##
 
 * Eine schöne und lesbare Version von Git-Manual.txt kollaborativ erstellen, z.B. mit HTML+CSS
+* Deinen Freunden davon erzählen ;-)
