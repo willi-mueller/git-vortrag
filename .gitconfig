@@ -1,10 +1,11 @@
-# copy und paste mich für sinnvolle globale Einstellungen in ~/.gitconfig 
-# bzw. für spezielle Einstellungen für ein bestimmtes repository in
-# path/to/repo/.git/config 
+# copy und paste mich für sinnvolle globale Einstellungen in ~/.gitconfig i
+# bzw. für spezielle Einstellungen im Dateipfad des git repositorys: 
+# $ touch .git/.gitconfig
+# $ open .git/gitconfig
 
 [user]
-	name = Mein Name    #bitte ändern
-	email = Meine@adresse.de    #bitte ändern
+	name = Willi
+    email = meine@email.xyz
 
 [color]
     ui = auto
@@ -23,13 +24,14 @@
     untracked = cyan
 
 [core]
-	editor = mate -w     # Einstellung für TextMate (nur für den Mac)
-	excludesfile = ~/.gitignore
+    editor = vim #mvim #mate -w     # Einstellung für Editor
+    excludesfile = ~/.gitignore
 
-[alias]    #gegen Tippfehler im Terminal bei langen Wörtern
+[alias]    #gegen Tippfehler im Terminal
 	cm = commit
 	co = checkout
-	st = status
-
+    st = status
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lon = log --oneline --graph
 [merge]
-	tool = FileMerge
+	tool = FileMerge    #mergetool, für Linux empfohlen: Meld
